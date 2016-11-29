@@ -15,6 +15,8 @@ class CreateNucleiTable extends Migration
     {
         Schema::create('nuclei', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('full_name',80);
+            $table->string('short_name',30);
             $table->timestamps();
         });
     }

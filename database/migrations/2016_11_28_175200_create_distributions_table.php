@@ -15,7 +15,15 @@ class CreateDistributionsTable extends Migration
     {
         Schema::create('distributions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name',60);
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->text('description');
+            $table->enum('state',['Activo','Inactivo']);
+            $table->integer('nucleus_id');
             $table->timestamps();
+
+            $table->foreign('nucleus_id')->references('id')->on('nuclei');
         });
     }
 
