@@ -21,6 +21,7 @@ class CreateDistributionsTable extends Migration
             $table->text('description');
             $table->enum('state',['Activo','Inactivo']);
             $table->integer('nucleus_id');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('nucleus_id')->references('id')->on('nuclei');

@@ -10,7 +10,7 @@ class Nucleus extends Model
 
     protected $table = 'nuclei';
 
-    protected $fillable = ['full_name','short_name'];
+    protected $fillable = ['ruc','full_name','short_name'];
     
     public function distributions(){
     	return $this->hasMany(Distribution::class);
