@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Distribution;
 
 class DistributionsController extends Controller
 {
@@ -13,7 +14,9 @@ class DistributionsController extends Controller
      */
     public function index()
     {
-        //
+        //$distributions = Distribution::all();
+        $distributions = Distribution::paginate(2);
+        return view('admin.distributions.index',compact('distributions'));
     }
 
     /**
@@ -24,6 +27,7 @@ class DistributionsController extends Controller
     public function create()
     {
         //
+        return view('admin.distributions.create');
     }
 
     /**

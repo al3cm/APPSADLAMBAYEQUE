@@ -18,9 +18,9 @@ class CreateDistributionsTable extends Migration
             $table->string('name',60);
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->text('description');
-            $table->enum('state',['Activo','Inactivo']);
-            $table->integer('nucleus_id');
+            $table->text('description')->nullable();
+            $table->enum('state',['Activo','Inactivo'])->default('Activo');
+            $table->integer('nucleus_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
 
