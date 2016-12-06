@@ -1,10 +1,11 @@
-body{
-	
-}
-
 footer{
-	background-color: #333;
+	background-color: #159;
 	color: #ddd;
 	padding: 5px;
 	text-align: center;
+}
+
+.form-delete{
+	
+	display: inline-block;
 }

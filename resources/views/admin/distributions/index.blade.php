@@ -3,7 +3,7 @@
 @section('title','Distribuciones')
 
 @section('content')
-	<a href="{{ route('distributions.create') }}" class="btn btn-primary">Nueva Distribución</a>
+	<a href="{{ route('distributions.create') }}" class="btn btn-primary">Nueva Distribución</a><br><br>
 	<table class="table table-bordered">
 		<thead>
 			<th>ID</th>
@@ -22,8 +22,11 @@
 					<td>{{ $distribution->start_date }}</td>
 					<td>{{ $distribution->end_date }}</td>
 					<td>
-						<a href="#" class="btn btn-default">Editar</a>
-						<a href="#" class="btn btn-default">Ver Detalle</a>
+						<a href="{{ route('distributions.edit',$distribution->id) }}" class="btn btn-default">Editar</a>
+						<a href="{{ route('distributions.show',$distribution->id) }}" class="btn btn-default">Ver Detalle</a>
+						{!! Form::open(['route'=>['distributions.destroy',$distribution],'method'=>'delete','class'=>'form-delete']) !!}
+							{!! Form::submit('Eliminar',['class'=>'btn btn-default']) !!}
+						{!! Form::close() !!}
 					</td>
 				</tr>
 			@endforeach

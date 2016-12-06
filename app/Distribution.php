@@ -15,4 +15,6 @@ class Distribution extends Model
     public function nucleus(){
     	return $this->belongsTo(Nucleus::class);
     }
+
+
 }

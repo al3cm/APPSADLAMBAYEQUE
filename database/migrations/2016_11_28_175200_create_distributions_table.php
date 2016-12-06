@@ -16,8 +16,8 @@ class CreateDistributionsTable extends Migration
         Schema::create('distributions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',60);
-            $table->dateTime('start_date');
-            $table->dateTime('end_date')->nullable();
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
             $table->text('description')->nullable();
             $table->enum('state',['Activo','Liquidado'])->default('Activo');
             $table->integer('nucleus_id')->unsigned();

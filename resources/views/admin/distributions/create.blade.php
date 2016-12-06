@@ -17,8 +17,8 @@
 			{!! Form::text('description',null,['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::label('nucleus','Núcleo Ejecutor') !!}
-			{!! Form::select('nucleus', [1 => 'NEDD Lambayeque'], null, ['class'=>'form-control','required','placeholder' => 'Elija una opción...']) !!}
+			{!! Form::label('nucleus_id','Núcleo Ejecutor') !!}
+			{!! Form::select('nucleus_id', [1 => 'NEDD Lambayeque'], null, ['class'=>'form-control','required','placeholder' => 'Elija una opción...']) !!}
 		</div>	
 		<div class="form-group">
 			{!! Form::submit('Crear Distribución',['class' => 'btn btn-primary']) !!}	
