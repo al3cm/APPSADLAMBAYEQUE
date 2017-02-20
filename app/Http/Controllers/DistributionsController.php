@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Distribution;
 use App\BaseModel;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Request\DistributionsFormRequest;
+use App\Http\Requests\DistributionsFormRequest;
 use DB;
 
 class DistributionsController extends Controller
@@ -20,7 +20,7 @@ class DistributionsController extends Controller
     {
         if ($request) {
             $query=trim($request->get('searchText'));
-            $distributions=DB::table('distribution')->where('name','LIKE','%'.$query.'%')
+            $distributions=DB::table('distributions')->where('name','LIKE','%'.$query.'%')
             ->orderBy('created_at','desc')
             ->paginate(5);
             return view('admin.distributions.index',['distributions'=>$distributions,'searchText'=>$query]);
@@ -54,7 +54,7 @@ class DistributionsController extends Controller
     {
     
         Distribution::create($request->all());
-        return Redirect::to('distributions.index');
+        return Redirect::to('distributions\index');
     //    return redirect()->route('distributions.index');
     }
 /*
